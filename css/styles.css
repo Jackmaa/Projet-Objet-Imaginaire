@@ -92,6 +92,7 @@ video {
   --p-font-size: clamp(0.5rem, 1rem + 0.4211vw, 2rem);
   --font-family-text: "Exo 2", sans-serif;
   --light-gray: rgb(217, 217, 217);
+  --lighter-gray: rgb(161, 86, 204);
   --light-purp: rgb(83, 56, 158);
   --dark-purp: rgb(56, 36, 105);
 }
@@ -151,18 +152,36 @@ span {
 /*  ||  HEADER  ||  */
 
 header {
-  background: radial-gradient(var(--light-purp) 20%, var(--dark-purp));
+  background: radial-gradient(var(--lighter-gray), var(--dark-purp));
   text-align: center;
-    box-shadow:
+  box-shadow:
   inset 0 0 20px #fff,
-  inset 5px 0 20px #f0f,
-  inset -5px 0 20px #f0f,
-  inset 5px 0 20px #0ff,
-  inset -5px 0 20px #0ff;
+  inset 0 0 20px #f0f,
+  inset 0 0 20px #f0f,
+  inset 0 0 20px #0ff,
+  inset 0 0 20px #0ff;
 }
+
 
 header img {
   width: 20rem;
+}
+
+header {
+  position: relative;
+}
+
+header::after {
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 80px;
+  box-shadow:   
+  0 0 50px #fff,
+  -10px 0 80px #f0f,
+  -10px 0 80px #0ff;
 }
 
 .header-hero {
@@ -200,7 +219,7 @@ header img {
 /*   ||   FEATURES   ||   */
 
 summary {
-  list-style-position: outside;
+  list-style-type: none;
   cursor: pointer;
 }
 
